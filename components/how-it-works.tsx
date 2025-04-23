@@ -40,7 +40,7 @@ export default function HowItWorks() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {steps.map((step) => (
-            <div key={step.id} className="bg-white rounded-lg shadow-md p-6">
+            <div key={step.id} className="bg-white rounded-xl shadow-md p-6">
               <div className="flex flex-col items-center text-center">
                 <div className="mb-4">{step.icon}</div>
                 <h3 className="text-xl font-bold mb-2">{step.title}</h3>

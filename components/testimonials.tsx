@@ -70,7 +70,7 @@ export default function Testimonials() {
             >
               {testimonials.map((testimonial) => (
                 <div key={testimonial.id} className="w-full flex-shrink-0 px-4">
-                  <div className="bg-gray-50 rounded-lg p-8 text-center">
+                  <div className="bg-gray-50 p-8 text-center rounded-xl">
                     <div className="flex justify-center mb-4">
                       {[...Array(5)].map((_, i) => (
                         <Star
