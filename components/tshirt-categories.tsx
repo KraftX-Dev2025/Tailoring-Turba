@@ -8,7 +8,7 @@ const categories = [
     name: "Round Neck T-Shirts",
     description: "Classic and comfortable round neck t-shirts for everyday wear",
     icon: <ShirtRound className="h-10 w-10 text-blue-500" />,
-    image: "/placeholder.svg?height=300&width=300",
+    image: "/tshirt-black.jpg",
     link: "/products/round-neck",
   },
   {
@@ -16,7 +16,7 @@ const categories = [
     name: "Polo T-Shirts",
     description: "Stylish polo t-shirts for a smart casual look",
     icon: <ShirtIcon className="h-10 w-10 text-blue-500" />,
-    image: "/placeholder.svg?height=300&width=300",
+    image: "/tshirt-black.jpg",
     link: "/products/polo",
   },
   {
@@ -24,7 +24,7 @@ const categories = [
     name: "V-Neck T-Shirts",
     description: "Trendy v-neck t-shirts for a modern look",
     icon: <ShirtOff className="h-10 w-10 text-blue-500" />,
-    image: "/placeholder.svg?height=300&width=300",
+    image: "/tshirt-black.jpg",
     link: "/products/v-neck",
   },
   {
@@ -32,7 +32,7 @@ const categories = [
     name: "Full Sleeve T-Shirts",
     description: "Full sleeve t-shirts for cooler weather",
     icon: <Shirt className="h-10 w-10 text-blue-500" />,
-    image: "/placeholder.svg?height=300&width=300",
+    image: "/tshirt-black.jpg",
     link: "/products/full-sleeve",
   },
 ]
@@ -53,16 +53,16 @@ export default function TShirtCategories() {
             <Link
               href="/design"
               key={category.id}
-              className="bg-white rounded-lg shadow-md overflow-hidden transition-transform hover:scale-105"
+              className="p-4 bg-white rounded-xl border border-gray-100 shadow-lg overflow-hidden transition-transform hover:scale-105"
             >
-              <div className="relative h-48">
+              <div className="relative h-72">
                 <Image src={category.image || "/placeholder.svg"} alt={category.name} fill className="object-cover" />
               </div>
               <div className="p-6">
                 <div className="flex flex-col items-center text-center">
-                  <div className="mb-4">{category.icon}</div>
+                  {/* <div className="mb-4">{category.icon}</div> */}
                   <h3 className="text-xl font-bold mb-2">{category.name}</h3>
-                  <p className="text-gray-600 mb-4">{category.description}</p>
+                  <p className="text-gray-600 mb-4 text-start text-sm">{category.description}</p>
                   <span className="text-blue-500 font-medium">View Products →</span>
                 </div>
               </div>

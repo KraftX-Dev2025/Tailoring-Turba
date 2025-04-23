@@ -4,9 +4,9 @@ import Image from "next/image"
 const products = [
   {
     id: 1,
-    name: "Premium Cotton Round Neck T-Shirt",
+    name: "Premium Cotton T-Shirt",
     description: "100% cotton round neck t-shirt for everyday comfort",
-    image: "/placeholder.svg?height=300&width=400",
+    image: "/tshirt.jpg",
     price: "₹299",
     link: "/products/round-neck/premium",
   },
@@ -14,7 +14,7 @@ const products = [
     id: 2,
     name: "Premium Cotton Polo T-Shirt",
     description: "Stylish polo t-shirt made from premium cotton",
-    image: "/placeholder.svg?height=300&width=400",
+    image: "/tshirt.jpg",
     price: "₹399",
     link: "/products/polo/premium",
   },
@@ -22,7 +22,7 @@ const products = [
     id: 3,
     name: "V-Neck Cotton T-Shirt",
     description: "Comfortable v-neck t-shirt for a casual look",
-    image: "/placeholder.svg?height=300&width=400",
+    image: "/tshirt.jpg",
     price: "₹349",
     link: "/products/v-neck/cotton",
   },
@@ -30,7 +30,7 @@ const products = [
     id: 4,
     name: "Full Sleeve Cotton T-Shirt",
     description: "Full sleeve t-shirt for cooler weather",
-    image: "/placeholder.svg?height=300&width=400",
+    image: "/tshirt.jpg",
     price: "₹449",
     link: "/products/full-sleeve/cotton",
   },
@@ -47,11 +47,11 @@ export default function FeaturedProducts() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="m-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {products.map((product) => (
-            <div key={product.id} className="bg-white rounded-lg shadow-md overflow-hidden">
+            <div key={product.id} className="p-4 bg-white rounded-xl shadow-xl overflow-hidden hover:scale-105 transition-transform">
               <div className="relative h-48">
-                <Image src={product.image || "/placeholder.svg"} alt={product.name} fill className="object-cover" />
+                <Image src={product.image || "/placeholder.svg"} alt={product.name} fill className="object-cover rounded-xl" />
               </div>
               <div className="p-4">
                 <h3 className="text-lg font-bold mb-2">{product.name}</h3>
