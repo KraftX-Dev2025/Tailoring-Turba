@@ -4,10 +4,13 @@ import { useState, useEffect } from "react"
 import Link from "next/link"
 import Image from "next/image"
 import { Menu, X, ShoppingCart, Phone } from "lucide-react"
+import { CgProfile } from "react-icons/cg";
+
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false)
   const [isScrolled, setIsScrolled] = useState(false)
+  const [isLoggedIn, setIsLoggedIn] = useState(true)
 
   useEffect(() => {
     const handleScroll = () => {
@@ -55,7 +58,7 @@ export default function Navbar() {
               Contact
             </Link>
             <Link href="/faq" className="text-gray-800 hover:text-blue-500 font-medium text-lg">
-              FAQs
+              My Designs
             </Link>
           </nav>
 
@@ -67,9 +70,17 @@ export default function Navbar() {
             <Link href="/my-orders" className="text-gray-800 hover:text-blue-500 font-medium">
               My Orders
             </Link>
-            <Link href="/login" className="btn-primary">
-              Login
-            </Link>
+            {isLoggedIn ? (
+              <Link href="/profile" className="text-gray-800 hover:text-blue-500 font-medium">
+                <CgProfile size={36} />
+
+              </Link>
+            ) : (
+              <Link href="/login" className="btn-primary">
+                Login
+              </Link>
+            )}
+
             <div className="flex items-center text-blue-500">
               <Phone className="h-5 w-5 mr-2" />
               <span className="text-sm">+91 8080917565</span>
@@ -116,11 +127,11 @@ export default function Navbar() {
               Contact
             </Link>
             <Link
-              href="/faq"
+              href="/my-designs"
               className="block text-gray-800 hover:text-blue-500 font-medium py-2"
               onClick={() => setIsOpen(false)}
             >
-              FAQs
+              My Designs
             </Link>
             <Link
               href="/my-orders"
@@ -137,9 +148,12 @@ export default function Navbar() {
               >
                 <ShoppingCart className="h-5 w-5 mr-2" /> Cart
               </Link>
-              <Link href="/login" className="btn-primary" onClick={() => setIsOpen(false)}>
-                Login
-              </Link>
+              {!isLoggedIn && (
+                <Link href="/login" className="btn-primary" onClick={() => setIsOpen(false)}>
+                  Login
+                </Link>
+              )}
+
             </div>
             <div className="flex items-center text-blue-500 pt-2">
               <Phone className="h-5 w-5 mr-2" />
